@@ -1,0 +1,29 @@
+name: CI Staging
+on:
+  push:
+    branches: [staging]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 'v14.2.0'
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout app
+        uses: actions/checkout@v2
+        with:
+          path: app
+      - name: Build and Push the Image
+        run: |
+          cd ./app
+          npm i
+          TIMESTAMP=$(date +%s)
+          docker build . -t ghcr.io/${{ github.repository }}-staging:tmstp-$TIMESTAMP
+          docker push ghcr.io/${{ github.repository }}-staging:tmstp-$TIMESTAMP
