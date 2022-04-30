@@ -10,7 +10,7 @@ app.get('/microservice-two', (req, res) => {
   res.json({
     resource: 'MICROSERVICE-TWO',
     data: {
-      fieldOne: "valueOne",
+      fieldOne: "valueOne3",
       fieldTwo: "valueTwo"
     }
   });
