@@ -1,4 +1,4 @@
-# k8s-microservices-app
+# k8s-microservice-two
 
 This repo is part of the bundle. 
 
