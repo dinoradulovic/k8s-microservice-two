@@ -17,14 +17,13 @@ This repo is part of the bundle.
 
 # Usage
 
-Microservices can be run in parallel with `npm start` command.
+Run the app with `npm start` command.
 
-They run on different ports.
+It works together with [k8s-microservice-one](https://github.com/dinoradulovic/k8s-microservice-one).
 
 Two endpoints are created to demonstrate the interaction between these two mircoservices.
 
 First microservice access the data from the second microservice. It combines it with it's own data and then returns that as a response.
-
 
 
 ### Running the app on a local cluster
