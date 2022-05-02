@@ -23,8 +23,11 @@ It works together with [k8s-microservice-one](https://github.com/dinoradulovic/k
 
 Two endpoints are created to demonstrate the interaction between these two mircoservices.
 
+After both apps are running, access the endpoints: 
+***k8s-microservice-one*** ```/microservice-one``` 
 First microservice access the data from the second microservice. It combines it with it's own data and then returns that as a response.
-
+***k8s-microservice-two*** ```/microservice-two``` 
+Data accessed by the first microservice, can be accessed independently in the second microservice
 
 ### Running the app on a local cluster
 
